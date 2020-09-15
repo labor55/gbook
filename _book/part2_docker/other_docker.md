@@ -36,3 +36,13 @@ docker run --env DB_CONN=redis://192.168.3.85:6379/0 -p 5010:5010 -v /home/proxy
 docker create -v /home/book:/srv/gitbook -p 4000:4000 --name gbook fellah/gitbook
 ```
 
+
+
+## pythonFile
+
+Dockerfile文件
+
+```
+docker create -it -v /home/pythonFile:/app --name pythonFile python37:lab python /app/run.py
+```
+
