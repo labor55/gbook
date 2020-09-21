@@ -8,6 +8,7 @@
 |  4   | scrapydweb | http://192.168.3.85:5000              | 爬虫监控中心 |
 |  5   | proxypool  | http://192.168.3.85:5010              | 代理池服务   |
 |  6   | transfile  | http://192.168.3.85:8500/file/upload/ | 文件上传服务 |
+|  7   | xxl-job    | http://192.168.0.11:8066/doc.html     | 数据定时插入 |
 
 ## scrapy服务
 

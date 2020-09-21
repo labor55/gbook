@@ -88,9 +88,10 @@ if __name__ == '__main__':
 ###8.3  pipelines.py：
 * spider爬取的数据一定要推送到pipelines中，这样可以通过爬虫日志观察到数据统计情况
 * 主要方法：
+
 	`open_spider(self,spider)`:在此方法中定义参数变量，数据库初始化
 	`process_item(self,item,spider)`:在此方法中进行数据的清洗、去重、入库，在入库前要判断字段是否空缺，类型是否正确，合格才入库
-    `close_spider(self,spider)`:在此方法中关闭数据库连接，避免数据库占用内存
+	`close_spider(self,spider)`:在此方法中关闭数据库连接，避免数据库占用内存
 *  执行顺序：open_spider --> process_item --> close_spider
 
 > **注意：涉及数据库的信息如地址、密码、端口，以及一切调用接口链接如获取代理链接、selenium_webdriver接口链接等都需要使用apollo，在apollo中获取。**
@@ -117,16 +118,16 @@ if __name__ == '__main__':
 ###8.7 其他
    除了以上说明的文件，还可以自行添加文件加以辅助
 
-
 ##9. scrapy项目的一生
 
-![scrapy_project_life](/img/scrapy_project_life.png)
+![scrapy_project_life](../img/proj_rule2.png)
 
 #二、 布署
 ##1. scrapyd：
 环境安装配置
 ##2. scrapydweb：
 定时要求：
+
 > * 定时的爬取时间不能集中在某个时间段；
 > * 资讯类爬虫爬取频率是每天爬取一次或者每周爬取几次，视情况而定；
 > * 数据类、报告类爬虫频率根据数据类型及网站类型而定，一般为1个月一次，或两三个月一次，日更的网站可以每日爬取一次；
@@ -154,7 +155,7 @@ http://192.168.3.85:5000/1/servers/
 
 #2. 数据、报告菜单id生成说明
 如 农业 id 为01
-  
+
 |目录|名称|id|
 |------|-----:|:-----|
 |第一级目录|农业|01|
@@ -162,7 +163,7 @@ http://192.168.3.85:5000/1/servers/
 |第三级目录|xxx|01001001|
 |......| ......|......|
 |最后一级目录|xxx|01001…001|
-	
+
 * Mysql菜单表字段必须有这3个字段
 > menu_id				 string
 > menu_name 				string
