@@ -1,3 +1,13 @@
 {
-    "plugins": ["expandable-chapters"]
+    "plugins": [
+        "-highlight",
+        "-search",
+        "expandable-chapters",
+        "prism",
+        "search-plus",
+        "back-to-top-button",
+        "splitter",
+        "atoc",
+        "sectionx"
+    ]
 }

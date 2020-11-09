@@ -21,11 +21,31 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
                 
             
                 
@@ -98,7 +118,7 @@
                 <a href="../">
             
                     
-                    start
+                    软件中心
             
                 </a>
             
@@ -111,7 +131,7 @@
                 <a href="../part1_jskj/">
             
                     
-                    服务器应用
+                    一、服务器应用
             
                 </a>
             
@@ -185,6 +205,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.6" data-path="../part1_jskj/basicUrl.html">
+            
+                <a href="../part1_jskj/basicUrl.html">
+            
+                    
+                    基本网站汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../part1_jskj/hot_industry.html">
+            
+                <a href="../part1_jskj/hot_industry.html">
+            
+                    
+                    热门行业
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -195,7 +241,7 @@
                 <a href="./">
             
                     
-                    docker服务
+                    二、docker服务
             
                 </a>
             
@@ -253,7 +299,7 @@
                 <a href="../part3_tech/">
             
                     
-                    技术操作
+                    三、技术操作
             
                 </a>
             
@@ -345,6 +391,64 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="../part4_scrapy/">
+            
+                <a href="../part4_scrapy/">
+            
+                    
+                    scrapy相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../part4_scrapy/scrapy_settings.html">
+            
+                <a href="../part4_scrapy/scrapy_settings.html">
+            
+                    
+                    scrapy设置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../part4_scrapy/scrapyd.html">
+            
+                <a href="../part4_scrapy/scrapyd.html">
+            
+                    
+                    scrapyd配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../part4_scrapy/scrapy-note.html">
+            
+                <a href="../part4_scrapy/scrapy-note.html">
+            
+                    
+                    scrapy笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -385,7 +489,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -467,14 +571,14 @@
 </tbody>
 </table>
 <p><strong>1&#x3001;&#x62C9;&#x53D6;mongo&#x955C;&#x50CF;</strong></p>
-<pre><code class="lang-shell"># &#x62C9;&#x53D6;mongo&#x955C;&#x50CF;
+<pre class="language-"><code class="lang-shell"># &#x62C9;&#x53D6;mongo&#x955C;&#x50CF;
 docker pull docker
 # &#x4E3A;MongoDB&#x96C6;&#x7FA4;&#x521B;&#x5EFA;&#x72EC;&#x7ACB;&#x7684;docker&#x7F51;&#x6865;
 docker network create --subnet=10.1.1.0/24 mongodb0
 </code></pre>
 <p><strong>2&#x3001;&#x521B;&#x5EFA;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;</strong></p>
 <p>&#x8FD0;&#x884C;&#x4E09;&#x4E2A;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;</p>
-<pre><code class="lang-shell"># &#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;1
+<pre class="language-"><code class="lang-shell"># &#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;1
 docker run -d --name configsvr0 --network=mongodb0 --ip=10.1.1.2 --restart=always -v /home/mongodb/data/cs/configsvr0:/data/configdb mongo --configsvr --replSet &quot;rs_configsvr&quot; --bind_ip_all --wiredTigerCacheSizeGB 4
 # &#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;2
 docker run -d --name configsvr1 --network=mongodb0 --ip=10.1.1.3 --restart=always -v /home/mongodb/data/cs/configsvr1:/data/configdb mongo --configsvr --replSet &quot;rs_configsvr&quot; --bind_ip_all --wiredTigerCacheSizeGB 4
@@ -485,7 +589,7 @@ docker run -d --name configsvr2 --network=mongodb0 --ip=10.1.1.4 --restart=alway
 docker run --name some-mongo -v /my/custom:/etc/mongo -d mongo --config /etc/mongo/mongod.conf
 </code></pre>
 <p>&#x67E5;&#x8BE2;&#x590D;&#x5236;&#x96C6;&#x7684;ip&#x5730;&#x5740;</p>
-<pre><code>docker inspect configsvr0 | grep IPAddress
+<pre class="language-"><code>docker inspect configsvr0 | grep IPAddress
 docker inspect configsvr1 | grep IPAddress
 docker inspect configsvr2 | grep IPAddress
 </code></pre><p>&#x7531;&#x4E8E;&#x2013;configsvr&#x7684;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x4E3A;27019&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x7684;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x7684;&#x5730;&#x5740;&#x4E3A; </p>
@@ -495,7 +599,7 @@ docker inspect configsvr2 | grep IPAddress
 <li>configsvr2: 10.1.1.4:27019</li>
 </ul>
 <p>&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;</p>
-<pre><code class="lang-shell"># &#x8FDB;&#x5165;&#x5BB9;&#x5668;
+<pre class="language-"><code class="lang-shell"># &#x8FDB;&#x5165;&#x5BB9;&#x5668;
 docker exec -it configsvr0 bash
 # &#x8FDB;&#x5165;mongo
 mongo --host 10.1.1.2 --port 27019
@@ -511,7 +615,7 @@ rs.initiate({
 })
 </code></pre>
 <p><strong>3&#x3001;&#x521B;&#x5EFA;&#x5206;&#x7247;&#x590D;&#x5236;&#x96C6;</strong></p>
-<pre><code class="lang-shell"># &#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x7247;&#x590D;&#x5236;&#x96C6;
+<pre class="language-"><code class="lang-shell"># &#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x7247;&#x590D;&#x5236;&#x96C6;
 docker run --name shardsvr00 --network=mongodb0 --ip=10.1.1.5 --restart=always -d -v /home/mongodb/data/sh/shardsvr00:/data/db mongo --shardsvr --replSet &quot;rs_shardsvr0&quot; --bind_ip_all
 docker run --name shardsvr01 --network=mongodb0 --ip=10.1.1.6 --restart=always -d -v /home/mongodb/data/sh/shardsvr01:/data/db mongo --shardsvr --replSet &quot;rs_shardsvr0&quot; --bind_ip_all
 docker run --name shardsvr02 --network=mongodb0 --ip=10.1.1.7 --restart=always -d -v /home/mongodb/data/sh/shardsvr02:/data/db mongo --shardsvr --replSet &quot;rs_shardsvr0&quot; --bind_ip_all
@@ -525,7 +629,7 @@ docker run --name shardsvr21 --network=mongodb0 --ip=10.1.1.12 --restart=always 
 docker run --name shardsvr22 --network=mongodb0 --ip=10.1.1.13 --restart=always -d -v /home/mongodb/data/sh/shardsvr22:/data/db mongo --shardsvr --replSet &quot;rs_shardsvr2&quot; --bind_ip_all
 </code></pre>
 <p>&#x67E5;&#x8BE2;&#x590D;&#x5236;&#x96C6;&#x7684;ip&#x5730;&#x5740;</p>
-<pre><code>docker inspect shardsvr00 | grep IPAddress
+<pre class="language-"><code>docker inspect shardsvr00 | grep IPAddress
 docker inspect shardsvr01 | grep IPAddress
 docker inspect shardsvr02 | grep IPAddress
 docker inspect shardsvr10 | grep IPAddress
@@ -547,7 +651,7 @@ docker inspect shardsvr22 | grep IPAddress
 <li>shardsvr22: 10.1.1.13:27018</li>
 </ul>
 <p>&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;</p>
-<pre><code class="lang-shell"># &#x8FDB;&#x5165;&#x5BB9;&#x5668;
+<pre class="language-"><code class="lang-shell"># &#x8FDB;&#x5165;&#x5BB9;&#x5668;
 docker exec -it shardsvr00 bash
 # &#x8FDB;&#x5165;mongo
 mongo --host 10.1.1.5 --port 27018
@@ -561,7 +665,7 @@ rs.initiate({
     ]
 })
 </code></pre>
-<pre><code class="lang-shell"># &#x8FDB;&#x5165;mongo
+<pre class="language-"><code class="lang-shell"># &#x8FDB;&#x5165;mongo
 mongo --host 10.1.1.8 --port 27018
 # mongo&#x4E2D;&#x8FD0;&#x884C;
 rs.initiate({
@@ -587,12 +691,12 @@ rs.initiate({
 </code></pre>
 <p><strong>4&#x3001;&#x521B;&#x5EFA;mongos&#xFF0C;&#x8FDE;&#x63A5;mongos&#x5230;&#x5206;&#x7247;&#x96C6;&#x7FA4;</strong></p>
 <p>&#x7531;&#x4E8E;&#x955C;&#x50CF;&#x7684;&#x9ED8;&#x8BA4;&#x5165;&#x53E3;&#x662F; mongod&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x901A;&#x8FC7; --entrypoint &#x201C;mongos&#x201D; &#x5C06;&#x5176;&#x6539;&#x4E3A; mongos&#xFF1A;</p>
-<pre><code class="lang-shell">docker run --name mongos0 --network=mongodb0 --ip=10.1.1.14 --restart=always -d -p 27017:27017 --entrypoint &quot;mongos&quot; mongo --configdb rs_configsvr/10.1.1.2:27019,10.1.1.3:27019,10.1.1.4:27019 --bind_ip_all
+<pre class="language-"><code class="lang-shell">docker run --name mongos0 --network=mongodb0 --ip=10.1.1.14 --restart=always -d -p 27017:27017 --entrypoint &quot;mongos&quot; mongo --configdb rs_configsvr/10.1.1.2:27019,10.1.1.3:27019,10.1.1.4:27019 --bind_ip_all
 # &#x7B2C;&#x4E8C;&#x4E2A;
 docker run --name mongos1 --network=mongodb0 --ip=10.1.1.15 --restart=always -d -p 27018:27017 --entrypoint &quot;mongos&quot;  mongo --configdb rs_configsvr/10.1.1.2:27019,10.1.1.3:27019,10.1.1.4:27019 --bind_ip_all
 </code></pre>
 <p>&#x67E5;&#x770B;&#x5730;&#x5740;</p>
-<pre><code>docker inspect mongos0 | grep IPAddress
+<pre class="language-"><code>docker inspect mongos0 | grep IPAddress
 docker inspect mongos1 | grep IPAddress
 </code></pre><p>&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x4E3A;27017&#xFF0C;&#x6545;&#x5730;&#x5740;&#x4E3A;&#xFF1A;</p>
 <ul>
@@ -601,7 +705,7 @@ docker inspect mongos1 | grep IPAddress
 </ul>
 <p>&#x6CE8;&#xFF1A;&#x6620;&#x5C04;&#x5230;&#x5BBF;&#x4E3B;&#x673A;&#x4FBF;&#x4E8E;&#x5916;&#x9762;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;</p>
 <p><strong>5&#x3001;&#x6DFB;&#x52A0;&#x5206;&#x7247;&#x5230;&#x96C6;&#x7FA4;</strong></p>
-<pre><code class="lang-shell">docker exec -it mongos0 bash
+<pre class="language-"><code class="lang-shell">docker exec -it mongos0 bash
 mongo --host 10.1.1.14 --port 27017
 # mongo&#x4E2D;&#x8FD0;&#x884C;
 sh.addShard(&quot;rs_shardsvr0/10.1.1.5:27018,10.1.1.6:27018,10.1.1.7:27018&quot;)
@@ -609,14 +713,14 @@ sh.addShard(&quot;rs_shardsvr1/10.1.1.8:27018,10.1.1.9:27018,10.1.1.10:27018&quo
 sh.addShard(&quot;rs_shardsvr2/10.1.1.11:27018,10.1.1.12:27018,10.1.1.13:27018&quot;)
 </code></pre>
 <p>&#x5176;&#x5B83;&#x64CD;&#x4F5C;</p>
-<pre><code class="lang-shell"># mongos&#x4E2D;
+<pre class="language-"><code class="lang-shell"># mongos&#x4E2D;
 # &#x67E5;&#x770B;&#x5206;&#x7247; 
 db.runCommand({listshards:1})
 # &#x67E5;&#x770B;&#x5206;&#x7247;&#x72B6;&#x6001;
 sh.status()
 </code></pre>
 <p><strong>6&#x3001;&#x6570;&#x636E;&#x5E93;&#x542F;&#x7528;&#x5206;&#x7247;</strong></p>
-<pre><code class="lang-shell"># &#x4E0A;&#x4E00;&#x6B65;&#x4E0D;&#x9000;&#x51FA;docker &#x7EE7;&#x7EED;&#x8FD0;&#x884C;
+<pre class="language-"><code class="lang-shell"># &#x4E0A;&#x4E00;&#x6B65;&#x4E0D;&#x9000;&#x51FA;docker &#x7EE7;&#x7EED;&#x8FD0;&#x884C;
 sh.enableSharding(&quot;industry&quot;)
 sh.enableSharding(&quot;national_conditions&quot;)
 </code></pre>
@@ -627,19 +731,19 @@ sh.enableSharding(&quot;national_conditions&quot;)
 <p>&#x4EE5;&#x4E0B;&#x4E3A;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;</p>
 <ol>
 <li><p>&#x5F00;&#x542F; test &#x5E93;&#x7684;&#x5206;&#x7247;&#x529F;&#x80FD;&#x3002;</p>
-<pre><code>sh.enableSharding(&quot;test&quot;)
+<pre class="language-"><code>sh.enableSharding(&quot;test&quot;)
 </code></pre></li>
 <li><p>&#x9009;&#x62E9;&#x96C6;&#x5408;&#x7684;&#x5206;&#x7247;&#x952E;&#xFF0C;&#x6B64;&#x65F6; MongoDB &#x4F1A;&#x81EA;&#x52A8;&#x4E3A; age &#x5B57;&#x6BB5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x3002;</p>
-<pre><code>sh.shardCollection(&quot;test.test_shard&quot;,{&quot;age&quot;: 1})
+<pre class="language-"><code>sh.shardCollection(&quot;test.test_shard&quot;,{&quot;age&quot;: 1})
 sh.shardCollection(&quot;industry.C25_data&quot;,{&quot;_id&quot;:1})
 </code></pre></li>
 <li><p>&#x6279;&#x91CF;&#x9020;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x3002;</p>
-<pre><code>use test
+<pre class="language-"><code>use test
 for (i = 1; i &lt; = 20000; i++) db.test_shard.insert({age:(i%100), name:&quot;user&quot;+i,
 create_at:new Date()})
 </code></pre></li>
 <li><p>&#x89C2;&#x5BDF;&#x5206;&#x7247;&#x6548;&#x679C;&#x3002;&#x4EE5;&#x4E0B;&#x4E3A;&#x547D;&#x4EE4;&#x548C;&#x90E8;&#x5206;&#x8F93;&#x51FA;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code>sh.status()
+<pre class="language-"><code>sh.status()
 test.test_shard
 shard key: { &quot;age&quot; : 1 }
 unique: false
@@ -653,7 +757,7 @@ chunks:
 { &quot;age&quot; : 73 } --&lt;&lt; { &quot;age&quot; : 92 } on : rep_shard2 Timestamp(2, 4)
 { &quot;age&quot; : 92 } --&lt;&lt; { &quot;age&quot; : { &quot;$maxKey&quot; : 1 } } on : rep_shard2 Timestamp(3, 1)
 </code></pre><p>&#x4ECE;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x5230; <code>test.test_shard</code> &#x96C6;&#x5408;&#x603B;&#x5171;&#x6709; 2 &#x4E2A;&#x5206;&#x7247;&#xFF0C;&#x5206;&#x7247; rep_shard1 &#x4E0A;&#x6709; 2 &#x4E2A; chunk&#xFF0C;&#x5206;&#x7247; rep_shard2 &#x4E0A;&#x6709; 3 &#x4E2A; chunk&#xFF0C;&#x5E74;&#x9F84;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E; 0 &#x5E76;&#x4E14;&#x5C0F;&#x4E8E; 36 &#x7684;&#x6587;&#x6863;&#x6570;&#x636E;&#x653E;&#x5230;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x7247; rep_shard1&#xFF0C;&#x5E74;&#x9F84;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E; 36 &#x5E76;&#x4E14;&#x5C0F;&#x4E8E; 73 &#x7684;&#x6587;&#x6863;&#x6570;&#x636E;&#x653E;&#x5230;&#x4E86;&#x7B2C;&#x4E8C;&#x4E2A;&#x5206;&#x7247; rep_shard2&#xFF0C;&#x6B64;&#x65F6;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;&#x4E86;&#x5206;&#x7247;&#x7684;&#x6548;&#x679C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>find</code> &#x547D;&#x4EE4;&#x6765;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5B58;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x5206;&#x7247;&#xFF0C;&#x4EE5;&#x4E0B;&#x4E3A;&#x547D;&#x4EE4;&#x548C;&#x90E8;&#x5206;&#x8F93;&#x51FA;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code>db.test_shard.find({ age: { $gte : 36 ,$lt : 73 } }).explain()
+<pre class="language-"><code>db.test_shard.find({ age: { $gte : 36 ,$lt : 73 } }).explain()
 {
  &quot;queryPlanner&quot; : {
      &quot;winningPlan&quot; : {
@@ -693,20 +797,20 @@ chunks:
 <p><strong>7.2 &#x57FA;&#x4E8E;Hashed&#x7684;&#x5206;&#x7247;&#x64CD;&#x4F5C;</strong></p>
 <ol>
 <li><p>&#x5F00;&#x542F; test &#x5E93;&#x7684;&#x5206;&#x7247;&#x529F;&#x80FD;&#x3002;</p>
-<pre><code>sh.enableSharding(&quot;test&quot;)
+<pre class="language-"><code>sh.enableSharding(&quot;test&quot;)
 </code></pre><p>&#x663E;&#x793A;&#x66F4;&#x591A;</p>
 </li>
 <li><p>&#x9009;&#x62E9;&#x96C6;&#x5408;&#x7684;&#x5206;&#x7247;&#x952E;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x7684;&#x662F; hash &#x7D22;&#x5F15;&#x3002;</p>
-<pre><code>sh.shardCollection(&quot;test.test_shard&quot;,{&quot;age&quot;: &quot;hashed&quot;})
+<pre class="language-"><code>sh.shardCollection(&quot;test.test_shard&quot;,{&quot;age&quot;: &quot;hashed&quot;})
 </code></pre><p>&#x663E;&#x793A;&#x66F4;&#x591A;</p>
 </li>
 <li><p>&#x6279;&#x91CF;&#x9020;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x3002;</p>
-<pre><code>use test
+<pre class="language-"><code>use test
 for (i = 1; i &lt;= 20000; i++) db.test_shard.insert({age:(i%100), name:&quot;user&quot;+i, create_at:new Date()})
 </code></pre><p>&#x663E;&#x793A;&#x66F4;&#x591A;</p>
 </li>
 <li><p>&#x89C2;&#x5BDF;&#x5206;&#x7247;&#x6548;&#x679C;&#x3002;&#x4EE5;&#x4E0B;&#x4E3A;&#x547D;&#x4EE4;&#x548C;&#x90E8;&#x5206;&#x8F93;&#x51FA;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code>sh.status()
+<pre class="language-"><code>sh.status()
 chunks:
         rep_shard1    2
         rep_shard2    2
@@ -718,13 +822,13 @@ chunks:
 </li>
 </ol>
 <h3 id="&#x5176;&#x5B83;&#x547D;&#x4EE4;">&#x5176;&#x5B83;&#x547D;&#x4EE4;</h3>
-<pre><code class="lang-shell">&#x5220;&#x9664;&#x547D;&#x4EE4;
+<pre class="language-"><code class="lang-shell">&#x5220;&#x9664;&#x547D;&#x4EE4;
 db.runCommand({removeShard:&quot;rs_shardsvr1&quot;})
 </code></pre>
 <p>balaece</p>
 <h3 id="&#x914D;&#x7F6E;&#x4FEE;&#x6539;">&#x914D;&#x7F6E;&#x4FEE;&#x6539;</h3>
 <p>&#x8BE6;&#x60C5;&#x8BF7;&#x770B;mongo&#x4E2D;&#x6587;&#x793E;&#x533A;</p>
-<pre><code class="lang-shell"># &#x627E;&#x5230;&#x4E3B;&#x8282;&#x70B9;
+<pre class="language-"><code class="lang-shell"># &#x627E;&#x5230;&#x4E3B;&#x8282;&#x70B9;
 cfg = rs.conf();
 cfg.members[0].host = &quot;10.1.1.5:27019&quot;
 cfg.members[1].host = &quot;10.1.1.6:27019&quot;
@@ -774,7 +878,7 @@ rs.reconfig(cfg)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mongo集群","level":"1.3.2","depth":2,"next":{"title":"其它服务","level":"1.3.3","depth":2,"path":"part2_docker/other_docker.md","ref":"part2_docker/other_docker.md","articles":[]},"previous":{"title":"scrapyd&scrapydweb","level":"1.3.1","depth":2,"path":"part2_docker/scrapyd&web.md","ref":"part2_docker/scrapyd&web.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2_docker/mongo_cluster.md","mtime":"2020-09-01T06:33:59.169Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-21T06:33:01.456Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mongo集群","level":"1.3.2","depth":2,"next":{"title":"其它服务","level":"1.3.3","depth":2,"path":"part2_docker/other_docker.md","ref":"part2_docker/other_docker.md","articles":[]},"previous":{"title":"scrapyd&scrapydweb","level":"1.3.1","depth":2,"path":"part2_docker/scrapyd&web.md","ref":"part2_docker/scrapyd&web.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-highlight","-search","expandable-chapters","prism","search-plus","back-to-top-button","splitter","atoc","sectionx","livereload"],"pluginsConfig":{"prism":{},"livereload":{},"atoc":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2_docker/mongo_cluster.md","mtime":"2020-09-01T06:33:59.169Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-09T08:39:59.680Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -788,15 +892,35 @@ rs.reconfig(cfg)
         
     
         
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         

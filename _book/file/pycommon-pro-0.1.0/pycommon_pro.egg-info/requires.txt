@@ -1,0 +1,4 @@
+requests
+eventlet
+peewee
+tenacity
